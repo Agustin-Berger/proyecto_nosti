@@ -1,0 +1,190 @@
+/* From Uiverse.io by zjssun */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #000000;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #000000;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  width: 150vh;
+  height: 100vh;
+  justify-content: center;
+}
+.button {
+  margin-top: 1%;
+  margin-bottom: 2%;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #000000;
+  text-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid #0f005080;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+.button:hover,
+:focus {
+  color: #000000;
+  background: #008cff;
+  border: 1px solid #008cff;
+  text-shadow: 0 0 5px #ffffff31, 0 0 10px #ffffff49, 0 0 20px #ffffff3f;
+  box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
+    0 0 100px #008cff;
+}
+
+.principal {
+  background-color: rgba(0, 0, 0, 0.384);
+  width: 150vh;
+  height: 100%;
+}
+.cabecera {
+  margin-top: 15%;
+
+  width: 100%;
+
+  display: flex;
+  position: absolute;
+}
+.input {
+  margin: 5%;
+  padding: 10px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #000000;
+  outline: none;
+  background-color: #ccc;
+}
+
+.input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+/* From Uiverse.io by BlackisPlay */
+.fechaInput {
+  margin-left: auto;
+  margin-right: auto;
+  height: 2.5em;
+  width: 12.5em;
+  border-radius: 2.5em;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  -webkit-filter: drop-shadow(1px 1px 10px #000);
+  filter: drop-shadow(7px 7px 10px #00000059);
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(77, 77, 77);
+  text-align: center;
+  font-size: 14px;
+  outline: 2px solid rgba(0, 0, 0, 0);
+  transition: outline-offset 0.5s ease, outline-color 0.5s ease,
+    height 0.5s ease, width 0.5s ease, filter 0.5s ease;
+}
+
+.fechaInput:focus {
+  outline-offset: 0.5em;
+  outline-color: rgba(0, 0, 0, 0.228);
+  transition: 0.2s;
+  height: 3em;
+  width: 13em;
+  -webkit-filter: drop-shadow(1px 1px 10px #000);
+  filter: drop-shadow(-7px 7px 10px #00000059);
+}
+
+.fechaInput::placeholder {
+  padding-left: 0.8em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transform: translateX(-6px);
+  transition: transform 0.5s ease;
+}
+
+.fechaInput:focus::placeholder {
+  transform: translateX(-85px);
+  transition: 0.5s;
+}
+.formulario {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-align-items: center;
+  align-items: flex-start;
+}
+.fecha {
+  width: 100%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.documento {
+  width: 100%;
+
+  margin-bottom: 3%;
+}
+.totales {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+.conceptos {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+.laboratorio {
+  width: 100%;
+}
+.anotacion {
+  width: 100%;
+}
