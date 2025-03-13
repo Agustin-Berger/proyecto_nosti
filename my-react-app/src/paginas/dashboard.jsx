@@ -14,7 +14,7 @@ const Dashboard = () => {
   const [formData, setFormData] = useState({
     usuario: "",
     contraseña: "",
-    rol: "user", // Valor predeterminado
+    rol: "usuario", // Valor predeterminado
   });
 
   const [mensaje, setMensaje] = useState(null);
@@ -38,7 +38,7 @@ const Dashboard = () => {
       setFormData({
         usuario: "",
         contraseña: "",
-        rol: "user",
+        rol: "",
       });
     } catch (error) {
       console.error("Error al crear usuario:", error);
@@ -100,8 +100,8 @@ const Dashboard = () => {
             onChange={handleInputChange}
             required
           >
-            <option value="user">Usuario</option>
-            <option value="admin">Administrador</option>
+            <option value="usuario">usuario</option>
+            <option value="admin">administrador</option>
           </select>
         </div>
 

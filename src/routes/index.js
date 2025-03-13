@@ -106,7 +106,7 @@ router.post("/crearUsuario", async (req, res) => {
     console.log("intente");
     res.status(201).json(nuevoUsuario);
   } catch (error) {
-    res.status(500).send(error, "nos e puede crear ");
+    res.status(500).send({ error: error.message });
   }
 });
 router.post("/ventas", verifyToken, async (req, res) => {
