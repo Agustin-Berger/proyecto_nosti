@@ -2,7 +2,7 @@ import { useState } from "react";
 import api from "../api";
 import CerrarSesion from "./cerrarSesion";
 import { useNavigate } from "react-router-dom";
-
+import styles from "../moduls/fechas.module.css";
 function Fechas() {
   const [data, setData] = useState([]);
   const [satrtDate, setSatrtDate] = useState("");
@@ -39,7 +39,7 @@ function Fechas() {
   };
 
   return (
-    <div>
+    <div className={styles.principal}>
       <CerrarSesion />
 
       <button onClick={() => handleNavigation("/ingreso")}>Ingreso</button>
@@ -47,13 +47,15 @@ function Fechas() {
         clientes
       </button>
       <button onClick={() => handleNavigation("/dashboard")}>Dashboard</button>
-      <h1>fechas</h1>
+      <h1>Fechas</h1>
       <input
         type="date"
         value={satrtDate}
         onChange={(e) => setSatrtDate(e.target.value)}
+        className={styles.fechaInput}
       />
       <input
+        className={styles.fechaInput}
         type="date"
         value={endDate}
         onChange={(e) => setEndDate(e.target.value)}

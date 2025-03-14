@@ -103,7 +103,7 @@ function Ingreso() {
     }
   };
   return (
-    <div className={styles.principal}>
+    <div>
       <div className={styles.cabecera}>
         <button
           className={styles.button}
@@ -131,7 +131,7 @@ function Ingreso() {
           Dashboard
         </button>
       </div>
-      <h1>Agregar Nueva Entrada</h1>
+      <h1 className={styles.h1}>Agregar Nueva Entrada</h1>
       <form className={styles.formulario} onSubmit={handleSubmit}>
         <label className={styles.fecha}>
           Fecha:
