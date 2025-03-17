@@ -1,6 +1,6 @@
 //import "./App.css"; // Asegúrate de que la importación de estilos esté aquí
 import { useState } from "react";
-import CerrarSesion from "./cerrarSesion";
+
 import { useNavigate } from "react-router-dom";
 import api from "../api";
 
@@ -31,7 +31,9 @@ function Clientes() {
 
   return (
     <div>
-      <CerrarSesion />
+      <button onClick={() => handleNavigation("/cerrarSesion")}>
+        Cerrar CerrarSesion
+      </button>
       <button onClick={() => handleNavigation("/ingreso")}>Ingreso</button>
       <button onClick={() => handleNavigation("/paciente-historial")}>
         Fechas

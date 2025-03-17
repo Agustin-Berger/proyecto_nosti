@@ -1,6 +1,6 @@
 import { useState } from "react";
 import api from "../api";
-import CerrarSesion from "./cerrarSesion";
+
 import { useNavigate } from "react-router-dom";
 import styles from "../moduls/fechas.module.css";
 function Fechas() {
@@ -40,7 +40,12 @@ function Fechas() {
 
   return (
     <div className={styles.principal}>
-      <CerrarSesion />
+      <button
+        className={styles.button}
+        onClick={() => handleNavigation("/cerrarSesion")}
+      >
+        Cerrar CerrarSesion
+      </button>
 
       <button onClick={() => handleNavigation("/ingreso")}>Ingreso</button>
       <button onClick={() => handleNavigation("/paciente-historial")}>
@@ -65,6 +70,7 @@ function Fechas() {
       <ul>
         {data.map((item) => (
           <li key={item.id}>
+            {console.log(item, "estoy en elitem")}
             <ul>
               {item.conceptos.map((conceptos, conceptosIndex) => (
                 <li key={conceptosIndex}>Concepto: {conceptos}</li>
@@ -75,6 +81,7 @@ function Fechas() {
                 <li key={totalesIndex}>Total: $ {total}</li>
               ))}
             </ul>
+            <ul>DNI:{item.documento}</ul>
           </li>
         ))}
 

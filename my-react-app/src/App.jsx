@@ -6,6 +6,7 @@ import Login from "./paginas/inicio";
 import { AuthProvider } from "./AuthContext";
 import PrivateRoute from "./privateRoute"; // Asegúrate de que la ruta sea correcta
 import Dashboard from "./paginas/dashboard";
+import CerrarSesion from "./paginas/cerrarSesion";
 
 const App = () => {
   return (
@@ -37,6 +38,8 @@ const App = () => {
               </PrivateRoute>
             }
           />
+          <Route path="/cerrarSesion" element={<CerrarSesion />} />
+
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>

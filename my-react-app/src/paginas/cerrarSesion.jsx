@@ -1,24 +1,27 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const CerrarSesion = () => {
-  const handleLogout = async () => {
+  const navigate = useNavigate();
+  const [error, setError] = useState(null);
+
+  const hand = async () => {
     try {
-      await axios.post(
-        "http://localhost:3001/cerrar-sesion",
-        {},
-        { withCredentials: true }
-      );
-      // Aquí puedes redirigir al usuario a la página de inicio de sesión o a otra página
-      window.location.href = "/"; // Ajusta según tu ruta
+      navigate("/");
     } catch (error) {
       console.error("Error al cerrar sesión:", error);
+      setError("Error al cerrar sesión. Intente nuevamente.");
     }
   };
 
   return (
     <div>
-      <button onClick={handleLogout}>Cerrar Sesión</button>
+      <h1>Identifiquese para continuar </h1>
+      <button onClick={hand}>Identificarse</button>
+      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 };
+
 export default CerrarSesion;

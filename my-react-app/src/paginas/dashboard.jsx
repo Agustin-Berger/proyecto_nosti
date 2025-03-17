@@ -53,12 +53,20 @@ const Dashboard = () => {
   }
 
   if (usuario !== "admin") {
-    return <p>No tienes permisos para ver esta página</p>;
+    return (
+      <>
+        <p>No tienes permisos para ver esta página</p>
+        <button onClick={() => handleNavigation("/ingreso")}>Ingreso</button>
+      </>
+    );
   }
 
   return (
     <div>
-      <CerrarSesion />
+      <button onClick={() => handleNavigation("/cerrarSesion")}>
+        {" "}
+        Cerrar CerrarSesion
+      </button>
       <button onClick={() => handleNavigation("/ingreso")}>Ingreso</button>
       <button onClick={() => handleNavigation("/paciente-historial")}>
         clientes
