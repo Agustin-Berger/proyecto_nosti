@@ -1,0 +1,135 @@
+:root {
+  margin-top: 5%;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #000000;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #94929200;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+}
+.h1 {
+  text-align: center;
+  color: #040a3f;
+  display: block;
+  background-color: #fafafa5b;
+}
+.button {
+  margin-top: 1%;
+  margin-bottom: 2%;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #000000;
+  text-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid #0f005080;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+.button:hover,
+:focus {
+  color: #000000;
+  background: #008cff;
+  border: 1px solid #008cff;
+  text-shadow: 0 0 5px #ffffff31, 0 0 10px #ffffff49, 0 0 20px #ffffff3f;
+  box-shadow: 0 0 5px #008cff, 0 0 20px #008cff, 0 0 50px #008cff,
+    0 0 100px #008cff;
+}
+
+.principal {
+  background-color: rgba(255, 255, 255, 0);
+  width: 150vw;
+  height: 100vh;
+}
+.cabecera {
+  background-color: #90a7e7;
+  align-content: flex-start;
+}
+.input {
+  margin: 5%;
+  padding: 10px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #000000;
+  outline: none;
+  background-color: #ccc;
+}
+
+.input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.usuario {
+  margin-right: 4.5%;
+  font-family: sans-serif;
+
+  font-size: large;
+}
+.rol {
+  font-family: sans-serif;
+
+  font-size: large;
+  margin-right: 11%;
+}
+.contraseña {
+  font-family: sans-serif;
+
+  font-size: large;
+}
+
+.bX {
+  margin-top: 1%;
+  margin-bottom: 2%;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #000000;
+  text-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid #0f005080;
+  transition: 0.5s ease;
+  user-select: none;
+}
+
+.bX:hover {
+  color: #fcfcfc;
+  background: #ff0800;
+  border: 1px solid #ff0000;
+  text-shadow: 0 0 5px #ffffff31, 0 0 10px #ffffff49, 0 0 20px #ffffff3f;
+  box-shadow: 0 0 5px #ff0000, 0 0 20px #ff0000, 0 0 50px #ff0000,
+    0 0 100px #ff0000;
+}
+.listados {
+  background-color: #007bffa9;
+}

@@ -109,6 +109,37 @@ router.post("/crearUsuario", async (req, res) => {
     res.status(500).send({ error: error.message });
   }
 });
+router.delete("/eliminarUsuario/:id", async (req, res) => {
+  try {
+    console.log("entro");
+    const { id } = req.params;
+    console.log(id, "id");
+    const usuario = await Usuario.findByPk(id);
+
+    console.log(usuario, "usuario");
+    if (!usuario) {
+      return res.status(404).send("Usuario no encontrado.");
+    }
+    if (usuario.rol === "admin") {
+      return res
+        .status(404)
+        .send("No se puede eliminar un usuario administrador.");
+    }
+    await usuario.destroy();
+    res.status(200).send("Usuario eliminado con éxito.");
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+router.get("/usuarios", async (req, res) => {
+  try {
+    const usuarios = await Usuario.findAll();
+    res.status(200).json(usuarios);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 router.post("/ventas", verifyToken, async (req, res) => {
   try {
     console.log("entro");

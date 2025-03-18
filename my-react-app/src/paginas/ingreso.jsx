@@ -178,7 +178,7 @@ function Ingreso() {
             onClick={addInputTotal}
             disabled={nuevaEntrada.totales.length >= 4}
           >
-            + Importe
+            + Monto
           </button>
           <button
             className={styles.button}
@@ -186,7 +186,7 @@ function Ingreso() {
             onClick={removeLastTotal}
             disabled={nuevaEntrada.totales.length <= 1}
           >
-            - Importe
+            - Monto
           </button>
         </div>
         {nuevaEntrada.totales.length >= 4 && (
