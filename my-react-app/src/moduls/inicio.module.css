@@ -111,3 +111,6 @@ input::placeholder {
   outline: 0;
   border-bottom-color: rgb(0, 0, 0);
 }
+.error {
+  color: #d10000;
+}

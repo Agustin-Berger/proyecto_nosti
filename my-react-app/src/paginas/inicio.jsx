@@ -10,18 +10,28 @@ const Login = () => {
     usuario: "",
     contraseña: "",
   });
+  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    await login(credentials);
-    navigate("/ingreso");
+    const success = await login(credentials);
+    console.log("success", credentials, success);
+    if (success) {
+      console.log("Inicio de sesión exitoso");
+      navigate("/ingreso");
+    } else {
+      console.log("Inicio de sesión fallido");
+      setErrorMessage("Usuario o contraseña incorrectos");
+    }
+    console.log(credentials, "credec");
   };
 
   return (
     <div className={styles.principal}>
       <h2>Iniciar Sesión</h2>
       <form onSubmit={handleLogin}>
+        {errorMessage && <p className={styles.error}>{errorMessage}</p>}
         <div className={styles.formcontrol}>
           <input
             placeholder="Usuario"

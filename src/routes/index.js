@@ -50,50 +50,59 @@ const verifyToken = (req, res, next) => {
 // Ejemplo: router.use("/auth", authRouter);
 router.post("/ingresar", async (req, res) => {
   const { usuario, contraseña } = req.body;
-  console.log(usuario, contraseña, "llegaron los apramteros");
+  console.log(usuario, contraseña, "llegaron los parametros");
+
+  if (!usuario || !contraseña) {
+    return res
+      .status(400)
+      .json({ mensaje: "Solicitud incorrecta: faltan usuario o contraseña" });
+  }
+
   try {
     const usuarioEncontrado = await Usuario.findOne({
       where: { usuario },
     });
+
     if (!usuarioEncontrado) {
-      res.status(404).send("usuario no encontrado");
+      return res
+        .status(401)
+        .json({ mensaje: "Usuario o contraseña incorrectos" });
     }
+
     const esContraseñaValida = await bcrypt.compare(
       contraseña,
       usuarioEncontrado.contraseña
     );
+
     if (!esContraseñaValida) {
-      res.status(404).send("contraseña incorrecta");
+      return res
+        .status(401)
+        .json({ mensaje: "Usuario o contraseña incorrectos" });
     }
+
     const usuarioT = {
       id: usuarioEncontrado.id,
       usuario: usuarioEncontrado.usuario,
       rol: usuarioEncontrado.rol,
     };
+
     const token = jwt.sign(usuarioT, secretKey, { expiresIn: "8h" });
-    console.log("ya estoy en el res ");
-    res.cookie(
-      "token",
-      token,
-      {
-        httpOnly: true, // Esto asegura que el cookie no sea accesible desde JavaScript del frontend
-        secure: process.env.NODE_ENV === "production", // Solo usar secure en producción (HTTPS)
-        maxAge: 8 * 60 * 60 * 1000,
-      },
-      console.log("ya hice el log")
-    ); // Cookie expira en 8 horas}
+
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 8 * 60 * 60 * 1000,
+    });
+    console.log("Cookie creada");
+
     return res
       .status(200)
       .json({ message: "Inicio de sesión exitoso", usuarioT });
   } catch (error) {
-    res.status(500).send(error, "no se pudo ingresar");
+    console.error("Error en /ingresar:", error);
+    return res.status(500).json({ mensaje: "Error interno del servidor" });
   }
 });
-router.post("/cerrar-sesion", verifyToken, async (req, res) => {
-  res.clearCookie("token");
-  res.status(200).send({ message: "Sesion cerrada" });
-});
-
 router.post("/crearUsuario", async (req, res) => {
   try {
     const { usuario, contraseña, rol } = req.body;
