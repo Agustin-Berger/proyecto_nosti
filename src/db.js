@@ -11,7 +11,7 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
 
 // Importar y definir los modelos
 const UsuarioModel = require("../back/models/Usuario")(sequelize);
-const VentaModel = require("../back/models/venta")(sequelize);
+const VentaModel = require("../back/models/Venta")(sequelize);
 
 // Definir relaciones
 // Relación muchos a muchos entre Usuario y Venta
