@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.27.2",
-    "bcrypt": "^5.1.1",
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.20.3",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
@@ -22,7 +22,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "node-dev": "^8.0.0",
-    "dotenv": "16.0.3"
+    "dotenv": "16.0.3",
+    "node-dev": "^8.0.0"
   }
 }
