@@ -2,7 +2,7 @@ const { Router } = require("express");
 const axios = require("axios");
 const router = Router();
 const { Usuario, Venta } = require("../db");
-const venta = require("../../back/models/venta");
+const venta = require("../../back/models/Venta");
 
 async function getClientes() {
   console.log("entre a getClientes");
