@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const axios = require("axios");
-const bcrypt = require("bcrypt");
+
+const bcrypt = require("bcryptjs");
 const modelsV = require("./ventas");
 const { Usuario, Venta } = require("../db");
 const { Pool } = require("pg");
