@@ -16,6 +16,21 @@ const cookieParser = require("cookie-parser");
 // Ejemplo: const authRouter = require('./auth.js');
 
 const router = Router();
+
+router.get("/crear-admin", async (req, res) => {
+  try {
+    const hashedPassword = await bcrypt.hash("admin1", 10);
+    const usuario = await Usuario.create({
+      usuario: "admin",
+      contraseña: hashedPassword,
+    });
+
+    res.send(`Usuario creado: ${usuario.usuario}`);
+  } catch (error) {
+    res.status(500).send("Error al crear usuario");
+  }
+});
+
 const verificarRol = (rolesPermitidos) => {
   return (req, res, next) => {
     const user = req.usuario; // Suponiendo que ya tienes el usuario extraído del JWT
